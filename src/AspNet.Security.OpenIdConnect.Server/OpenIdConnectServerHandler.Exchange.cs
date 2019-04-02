@@ -336,20 +336,20 @@ namespace AspNet.Security.OpenIdConnect.Server
                 // As a consequence, this check doesn't depend on the actual status of client authentication.
                 // See https://tools.ietf.org/html/rfc6749#section-6
                 // and http://openid.net/specs/openid-connect-core-1_0.html#RefreshingAccessToken
-                if (!string.IsNullOrEmpty(context.ClientId) && presenters.Any() &&
-                    !presenters.Contains(context.ClientId, StringComparer.Ordinal))
-                {
-                    Logger.LogError("The token request was rejected because the authorization " +
-                                    "code was issued to a different client application.");
+                //if (!string.IsNullOrEmpty(context.ClientId) && presenters.Any() &&
+                //    !presenters.Contains(context.ClientId, StringComparer.Ordinal))
+                //{
+                //    Logger.LogError("The token request was rejected because the authorization " +
+                //                    "code was issued to a different client application.");
 
-                    return await SendTokenResponseAsync(new OpenIdConnectResponse
-                    {
-                        Error = OpenIdConnectConstants.Errors.InvalidGrant,
-                        ErrorDescription = request.IsAuthorizationCodeGrantType() ?
-                            "The specified authorization code cannot be used by this client application." :
-                            "The specified refresh token cannot be used by this client application."
-                    });
-                }
+                //    return await SendTokenResponseAsync(new OpenIdConnectResponse
+                //    {
+                //        Error = OpenIdConnectConstants.Errors.InvalidGrant,
+                //        ErrorDescription = request.IsAuthorizationCodeGrantType() ?
+                //            "The specified authorization code cannot be used by this client application." :
+                //            "The specified refresh token cannot be used by this client application."
+                //    });
+                //}
 
                 // Validate the redirect_uri flowed by the client application during this token request.
                 // Note: for pure OAuth2 requests, redirect_uri is only mandatory if the authorization request
