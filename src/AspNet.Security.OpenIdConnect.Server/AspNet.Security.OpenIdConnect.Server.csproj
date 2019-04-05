@@ -11,7 +11,8 @@
     <Description>OpenID Connect server middleware for ASP.NET Core.</Description>
     <Authors>Kévin Chalet</Authors>
     <PackageTags>aspnetcore;authentication;jwt;openidconnect;security</PackageTags>
-	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyVersion>2.0.0.1</AssemblyVersion>
+    <Version>2.0.1-ELJ</Version>
   </PropertyGroup>
 
   <ItemGroup>
